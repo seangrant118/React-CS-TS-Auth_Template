@@ -1,17 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 import "react-toastify/dist/ReactToastify.css";
-import Navbar from './Components/Navbar/Navbar';
-import { Outlet } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
+import Navbar from "./Components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { UserProvider } from "./Context/useAuth";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Outlet />
-      <ToastContainer />
+      <UserProvider>
+        <Navbar />
+        <Outlet />
+        <ToastContainer />
+      </UserProvider>
     </>
   );
 }
